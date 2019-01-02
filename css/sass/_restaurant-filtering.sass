@@ -4,6 +4,12 @@
   height: 50px
   background-color: #3397DB
   align-items: center
+  justify-content: center
+  display: flex
+  @media screen and (max-width: 540px)
+    flex-wrap: wrap
+    height: auto
+    padding-top: 10px
 
 .filter-options h2
   color: white
@@ -13,6 +19,7 @@
   margin: 0 20px
 
 .filter-options select
+  border-radius: 2px
   background-color: white
   border: 1px solid #fff
   font-family: Arial,sans-serif
@@ -22,3 +29,10 @@
   margin: 10px
   padding: 0 10px
   width: 200px
+  @media screen and (max-width: 600px)
+    width: 165px
+  @media screen and (max-width: 540px)
+    width: calc(100% - 20px)
+    height: 40px
+    &:first-of-type
+      margin-bottom: 0
