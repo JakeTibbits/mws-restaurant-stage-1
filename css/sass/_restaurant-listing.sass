@@ -1,6 +1,6 @@
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list
-  background-color: #f3f3f3
+  background-color: #ececec
   list-style: outside none none
   margin: 0
   text-align: center
@@ -28,7 +28,7 @@
 
 
 
-    h1
+    h3
       color: #f18200
       font-family: Arial,sans-serif
       font-size: 14pt
@@ -39,7 +39,7 @@
       text-transform: uppercase
       position: relative
       z-index: 1
-      background-color: rgba(255, 255, 255, 0.9)
+      background-color: #ececec
       padding: 10px 30px 10px 15px
       display: inline-block
       border-radius: 0 30px 0 0
@@ -60,7 +60,7 @@
       box-sizing: border-box
       text-align: left
       text-decoration: none
-      font-weight: 400
+      font-weight: 600
       text-transform: uppercase
       position: relative
       z-index: 1
@@ -68,15 +68,19 @@
       right: 15px
       transition: transform 300ms ease-in-out
       transform: translate3D(0,0,0)
+      line-height: 16px
+      letter-spacing: 0.05em
       span
         font-size: 12pt
         position: relative
         top: -1px
-      &:hover
+        color: #fff
+        line-height: 16px
+      &:hover, &:focus
         transform: translate3D(15px,0,0)
       @media screen and (max-width: 600px)
         font-size: 10pt
-        padding: 5px 0 5px 30px
+        padding: 8px 0 8px 25px
 
 
 
@@ -92,7 +96,6 @@
       &:first-of-type
         padding-bottom: 0
       @media screen and (max-width: 600px)
-        font-size: 10pt
         padding: 5px 10px
 
 

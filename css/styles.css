@@ -1,10 +1,10 @@
 /* ====================== Page Elements ====================== */
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif; }
 
 body, td, th, p {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 12pt;
   color: #333;
   line-height: 1.2; }
@@ -15,23 +15,44 @@ body {
   position: relative; }
 
 ul, li {
-  font-family: Arial, Helvetica, sans-serif;
   color: #333; }
 
 a {
   color: orange;
   text-decoration: none; }
-
-a:hover, a:focus {
-  color: #3397db;
-  text-decoration: none; }
-
-a img {
-  border: none 0px #fff; }
+  a:hover, a:focus {
+    color: #3397db;
+    text-decoration: none; }
+  a img {
+    border: none 0px #fff; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px; }
+
+.site-title {
+  width: 100%;
+  height: 70px;
+  background-color: #252831;
+  text-align: center;
+  margin: auto;
+  padding: 20px 10px 0;
+  display: block;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 100;
+  letter-spacing: 10px;
+  text-transform: uppercase; }
+  @media screen and (max-width: 760px) {
+    .site-title {
+      font-size: 18px;
+      padding-top: 15px;
+      height: 50px; } }
+  @media screen and (max-width: 425px) {
+    .site-title {
+      padding-top: 10px;
+      height: 65px; } }
+  .site-title a {
+    color: #fff; }
 
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
@@ -40,44 +61,29 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #ececec;
   min-height: 100%; }
 
-#footer {
+#site-footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
+  font-size: 10pt;
   letter-spacing: 1px;
   padding: 15px;
   text-align: center;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: 18px; }
+  #site-footer a {
+    color: orange; }
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  overflow: hidden !important;
+  margin: 0 0 0 0 !important; }
 
 /* ====================== Navigation ====================== */
-nav {
-  width: 100%;
-  height: 80px;
-  background-color: #252831;
-  text-align: center; }
-  @media screen and (max-width: 760px) {
-    nav {
-      height: 60px; } }
-  @media screen and (max-width: 425px) {
-    nav {
-      height: 75px; } }
-  nav h1 {
-    margin: auto;
-    padding: 20px 10px 0;
-    font-size: 22px; }
-    @media screen and (max-width: 760px) {
-      nav h1 {
-        font-size: 18px;
-        padding-top: 15px; } }
-    @media screen and (max-width: 425px) {
-      nav h1 {
-        padding-top: 10px; } }
-    nav h1 a {
-      color: #fff;
-      font-weight: 100;
-      letter-spacing: 10px;
-      text-transform: uppercase; }
-
 #breadcrumb {
   padding: 13px 15px;
   list-style: none;
@@ -123,7 +129,7 @@ nav {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
-  background-color: #f3f3f3;
+  background-color: #ececec;
   list-style: outside none none;
   margin: 0;
   text-align: center;
@@ -150,7 +156,7 @@ nav {
     @media screen and (max-width: 765px) {
       #restaurants-list li {
         width: 100%; } }
-    #restaurants-list li h1 {
+    #restaurants-list li h3 {
       color: #f18200;
       font-family: Arial,sans-serif;
       font-size: 14pt;
@@ -161,12 +167,12 @@ nav {
       text-transform: uppercase;
       position: relative;
       z-index: 1;
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: #ececec;
       padding: 10px 30px 10px 15px;
       display: inline-block;
       border-radius: 0 30px 0 0; }
       @media screen and (max-width: 600px) {
-        #restaurants-list li h1 {
+        #restaurants-list li h3 {
           font-size: 12pt;
           padding: 5px 30px  5px  10px; } }
     #restaurants-list li a {
@@ -180,7 +186,7 @@ nav {
       box-sizing: border-box;
       text-align: left;
       text-decoration: none;
-      font-weight: 400;
+      font-weight: 600;
       text-transform: uppercase;
       position: relative;
       z-index: 1;
@@ -193,19 +199,23 @@ nav {
       transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
       -webkit-transform: translate3D(0, 0, 0);
       -ms-transform: translate3D(0, 0, 0);
-      transform: translate3D(0, 0, 0); }
+      transform: translate3D(0, 0, 0);
+      line-height: 16px;
+      letter-spacing: 0.05em; }
       #restaurants-list li a span {
         font-size: 12pt;
         position: relative;
-        top: -1px; }
-      #restaurants-list li a:hover {
+        top: -1px;
+        color: #fff;
+        line-height: 16px; }
+      #restaurants-list li a:hover, #restaurants-list li a:focus {
         -webkit-transform: translate3D(15px, 0, 0);
         -ms-transform: translate3D(15px, 0, 0);
         transform: translate3D(15px, 0, 0); }
       @media screen and (max-width: 600px) {
         #restaurants-list li a {
           font-size: 10pt;
-          padding: 5px 0 5px 30px; } }
+          padding: 8px 0 8px 25px; } }
     #restaurants-list li p {
       position: relative;
       z-index: 1;
@@ -221,7 +231,6 @@ nav {
         padding-bottom: 0; }
       @media screen and (max-width: 600px) {
         #restaurants-list li p {
-          font-size: 10pt;
           padding: 5px 10px; } }
   #restaurants-list .restaurant-img {
     background-color: #ccc;
@@ -242,17 +251,17 @@ nav {
 
 @media screen and (min-width: 761px) {
   .inside #maincontent {
-    margin-top: 130px; } }
+    margin-top: 120px; } }
 
 @media screen and (max-width: 760px) {
   .inside #maincontent {
     margin-top: 100px; } }
 
 .inside #map-container {
-  height: calc(100% - 80px);
+  height: calc(100% - 70px);
   position: fixed;
   right: 0;
-  top: 80px;
+  top: 70px;
   width: 60%; }
   @media screen and (max-width: 1100px) {
     .inside #map-container {
@@ -275,10 +284,10 @@ nav {
   height: 100%;
   width: 100%; }
 
-.inside #footer {
+.inside #site-footer {
   width: 40%; }
   @media screen and (max-width: 1100px) {
-    .inside #footer {
+    .inside #site-footer {
       width: 100%; } }
 
 #restaurant-name {
@@ -472,50 +481,66 @@ nav {
       width: 100px; } }
 
 /* ====================== Restaurant Filtering ====================== */
-.filter-options {
+.filters {
   width: 100%;
-  height: 50px;
+  height: auto;
   background-color: #3397DB;
+  padding: 15px; }
+
+.filter-options {
+  padding: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  @media screen and (max-width: 540px) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+  @media screen and (max-width: 570px) {
     .filter-options {
       -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      height: auto;
-      padding-top: 10px; } }
-
-.filter-options h2 {
-  color: white;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1;
-  margin: 0 20px; }
-
-.filter-options select {
-  border-radius: 2px;
-  background-color: white;
-  border: 1px solid #fff;
-  font-family: Arial,sans-serif;
-  font-size: 11pt;
-  height: 35px;
-  letter-spacing: 0;
-  margin: 10px;
-  padding: 0 10px;
-  width: 200px; }
-  @media screen and (max-width: 600px) {
-    .filter-options select {
-      width: 165px; } }
-  @media screen and (max-width: 540px) {
-    .filter-options select {
-      width: calc(100% - 20px);
-      height: 40px; }
-      .filter-options select:first-of-type {
-        margin-bottom: 0; } }
+      flex-wrap: wrap; } }
+  .filter-options #filter-legend {
+    padding: 0;
+    display: table;
+    color: white;
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    margin: 0 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+    @media screen and (max-width: 570px) {
+      .filter-options #filter-legend {
+        margin-bottom: 15px; } }
+  .filter-options select {
+    border-radius: 2px;
+    background-color: white;
+    border: 1px solid #fff;
+    font-family: Arial,sans-serif;
+    font-size: 11pt;
+    height: 35px;
+    letter-spacing: 0;
+    margin: 0 10px;
+    padding: 0 10px;
+    width: 200px;
+    display: inline-block; }
+    .filter-options select:focus {
+      outline-color: orange; }
+    @media screen and (max-width: 650px) {
+      .filter-options select {
+        width: 165px; } }
+    @media screen and (max-width: 570px) {
+      .filter-options select {
+        margin: 0 0 15px 0;
+        width: calc(100% - 20px);
+        height: 40px; }
+        .filter-options select:last-of-type {
+          margin-bottom: 0; } }

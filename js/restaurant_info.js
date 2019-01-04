@@ -87,11 +87,12 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
+  image.alt = restaurant.name+" in "+restaurant.neighborhood;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
-  cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.innerHTML = "<span class=\"sr-only\">Restaurant serving </span>"+restaurant.cuisine_type+"<span class=\"sr-only\"> food in "+restaurant.neighborhood+"</span>";
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -106,6 +107,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  const tbody = document.createElement('tbody');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
@@ -117,8 +119,9 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
 
-    hours.appendChild(row);
+    tbody.appendChild(row);
   }
+  hours.appendChild(tbody);
 }
 
 /**
@@ -148,6 +151,12 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+
+  const title = document.createElement('h3');
+  title.className = "sr-only";
+  title.innerHTML = review.rating+"-Star Review by "+review.name+" on "+review.date;
+  li.appendChild(title);
+
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);

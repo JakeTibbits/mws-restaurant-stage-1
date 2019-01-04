@@ -15,13 +15,14 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <a class="site-title" href="/">Restaurant Reviews</a>
+      <!-- Beginning breadcrumb -->
+      <ul id="breadcrumb" >
+        <li><a href="/">Home</a></li>
+      </ul>
     </nav>
-    <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
-    </ul>
     <!-- End breadcrumb -->
+
     <!-- End nav -->
   </header>
   <!-- End header -->
@@ -39,7 +40,21 @@
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
       <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <table id="restaurant-hours">
+        <caption class="sr-only">
+          Restaurant Opening Hours
+        </caption>
+        <thead class="sr-only">
+          <tr>
+            <th>
+              Day
+            </th>
+            <th>
+              Opening Hours
+            </th>
+          </tr>
+        </thead>
+      </table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
@@ -51,7 +66,7 @@
   <!-- End main -->
 
   <!-- Beginning footer -->
-  <footer id="footer">
+  <footer id="site-footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
   <!-- End footer -->

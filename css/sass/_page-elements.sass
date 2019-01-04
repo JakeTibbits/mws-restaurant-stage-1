@@ -1,9 +1,9 @@
 /* ====================== Page Elements ====================== */
 *
 	box-sizing: border-box
+	font-family: Arial, Helvetica, sans-serif
 
 body,td,th,p
-	font-family: Arial, Helvetica, sans-serif
 	font-size: 12pt
 	color: #333
 	line-height: 1.2
@@ -14,23 +14,45 @@ body
 	position: relative
 
 ul, li
-	font-family: Arial, Helvetica, sans-serif
 	color: #333
 
 a
 	color: orange
 	text-decoration: none
-
-a:hover, a:focus
-	color: #3397db
-	text-decoration: none
-
-a img
-	border: none 0px #fff
+	&:hover, &:focus
+		color: #3397db
+		text-decoration: none
+	img
+		border: none 0px #fff
 
 h1, h2, h3, h4, h5, h6
-  font-family: Arial, Helvetica, sans-serif
   margin: 0 0 20px
+
+.site-title
+	width: 100%
+	height: 70px
+	background-color: #252831
+	text-align: center
+	margin: auto
+	padding: 20px 10px 0
+	display: block
+	font-size: 22px
+	color: #fff
+	font-weight: 100
+	letter-spacing: 10px
+	text-transform: uppercase
+
+	@media screen and (max-width: 760px)
+		font-size: 18px
+		padding-top: 15px
+		height: 50px
+	@media screen and (max-width: 425px)
+		padding-top: 10px
+		height: 65px
+
+	a
+		color: #fff
+
 
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section
 	display: block
@@ -39,11 +61,24 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	background-color: #ececec
 	min-height: 100%
 
-#footer
+#site-footer
 	background-color: #444
 	color: #aaa
-	font-size: 8pt
+	font-size: 10pt
 	letter-spacing: 1px
 	padding: 15px
 	text-align: center
 	text-transform: uppercase
+	line-height: 18px
+	a
+		color: orange
+
+
+.sr-only
+	position: absolute
+	height: 1px
+	width: 1px
+	clip: rect(1px,1px,1px,1px)
+	clip-path: polygon(0px 0px, 0px 0px, 0px 0px)
+	overflow: hidden !important
+	margin: 0 0 0 0 !important
