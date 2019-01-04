@@ -13,7 +13,6 @@
       margin-top: 100px
 
   #map-container
-    background: blue none repeat scroll 0 0
     height: calc(100% - 80px)
     position: fixed
     right: 0
@@ -25,8 +24,7 @@
       top: 0
       position: relative
       z-index: 1
-      border-bottom: 1px solid #d1d1d1
-      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2)
+      border-bottom: 1px solid rgba(#f18200, 0.3)
 
     @media screen and (max-width: 760px)
       height: 200px
@@ -49,7 +47,7 @@
 
 #restaurant-name
   color: #f18200
-  background-color: rgba(255,255,255,0.9)
+  background-color: rgba(#ececec,1)
   font-family: Arial,sans-serif
   font-size: 20pt
   font-weight: 200
@@ -62,12 +60,13 @@
   position: relative
   z-index: 10
   display: inline-block
+  border: solid rgba(#f18200, 0.3)
+  border-width: 1px 1px 0 0
   @media screen and (max-width: 1260px)
     margin-top: 300px
   @media screen and (max-width: 1100px)
     margin-top: 220px
   @media screen and (max-width: 475px)
-    background-color: #fff
     border-radius: 0 0 0 0
     margin-top: 260px
     width: 100%
@@ -95,24 +94,27 @@
   width: 100%
   padding: 15px
   @media screen and (max-width:1100px)
-    background: linear-gradient(to right, rgba(255,255,255,1) 20%,rgba(255,255,255,0.1) 100%)
+    background: linear-gradient(to right, rgba(255,255,255,1) 25%,rgba(255,255,255,0.1) 100%)
   @media screen and (max-width: 760px)
     max-width: 465px
     background: #fff
 
 #restaurant-cuisine
   background-color: #f18200
-  color: #252831
+  color: #fff
+  font-weight: 600
   font-size: 12pt
   font-weight: 300
-  letter-spacing: 10px
+  letter-spacing: 5px
   margin: 0
-  padding: 2px 15px
+  padding: 5px 15px
   text-align: left
   text-transform: uppercase
   width: 100%
   position: relative
   z-index: 10
+  text-shadow: 2px 1px #be6600
+
   @media screen and (max-width: 760px)
     max-width: 465px
 
@@ -146,7 +148,7 @@
     margin-bottom: 0
   h2
     color: #f18200
-    background-color: #fff
+    //background-color: #fff
     font-family: Arial,sans-serif
     font-size: 20pt
     font-weight: 200
@@ -159,6 +161,11 @@
     position: relative
     z-index: 10
     display: inline-block
+    border: solid rgba(#f18200, 0.3)
+    border-width: 1px 1px 0 0
+
+
+
 
 #reviews-list
   margin: 0
@@ -170,37 +177,49 @@
     list-style-type: none
     margin: 0 0 15px
     overflow: hidden
-    padding: 40px 0 15px 0
+    padding: 0 0 15px 0
     position: relative
     width: 100%
     border-radius: 0
     border-bottom: 1px solid rgba(#f18200, 0.3)
-
+    display: flex
+    flex-wrap: wrap
     @media screen and (max-width: 1100px)
       border-radius: 2px 2px 30px 2px
-      &:first-of-type
-        border-radius: 0 2px 30px 2px
+
     p
-      margin: 0
-      line-height: 1.8em
-      &:nth-of-type(2),&:nth-of-type(1)
-        display: inline-block
-        padding: 0 0 0 15px
-      &:nth-of-type(4)
-        padding: 10px 15px
+      &:first-of-type, &:nth-of-type(2)
+        margin: 0
+        background-color: #252831
+        color: #fff
+        padding: 5px 15px
+        width: 50%
+        line-height: 20px
+        letter-spacing: 0.1em
+      &:nth-of-type(2)
+        text-align: right
+        font-size: 10pt
+        color: #ccc
+        text-shadow: 2px 1px #000
+      &:nth-of-type(3), &:nth-of-type(4)
+        margin: 15px
+        line-height: 1.6em
       &:nth-of-type(3)
         background-color: #f18200
-        color: #252831
-        font-size: 12pt
+        color: #fff
+        font-weight: 600
+        font-size: 10pt
         font-weight: 300
-        letter-spacing: 10px
-        margin: 0
-        padding: 2px 15px
+        letter-spacing: 5px
+        border-radius: 2px
+        margin: 10px 10px 0
+        padding: 5px 10px
         text-align: left
         text-transform: uppercase
-        position: absolute
-        top: 0
-        width: 100%
+        text-shadow: 2px 1px #be6600
+
+
+
 
 
 
@@ -208,7 +227,7 @@
 #restaurant-hours
   padding-top: 0
   td
-    color: #666
+    color: #333
   @media screen and (max-width:1100px)
     tr
       td
