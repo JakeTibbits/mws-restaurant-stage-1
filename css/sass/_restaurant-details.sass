@@ -1,90 +1,216 @@
 /* ====================== Restaurant Details ====================== */
-.inside header
-  position: fixed
-  top: 0
-  width: 100%
-  z-index: 1000
+.inside
+  header
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 1000
 
-.inside #map-container
-  background: blue none repeat scroll 0 0
-  height: 87%
-  position: fixed
-  right: 0
-  top: 80px
-  width: 50%
+  #maincontent
+    @media screen and (min-width: 761px)
+      margin-top: 130px
+    @media screen and (max-width: 760px)
+      margin-top: 100px
 
-.inside #map
-  background-color: #ccc
-  height: 100%
-  width: 100%
+  #map-container
+    background: blue none repeat scroll 0 0
+    height: calc(100% - 80px)
+    position: fixed
+    right: 0
+    top: 80px
+    width: 60%
+    @media screen and (max-width: 1100px)
+      width: 100%
+      height: 300px
+      top: 0
+      position: relative
+      z-index: 1
+      border-bottom: 1px solid #d1d1d1
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2)
 
-.inside #footer
-  bottom: 0
-  position: absolute
-  width: 50%
+    @media screen and (max-width: 760px)
+      height: 200px
+      top: 10px
+    @media screen and (max-width: 425px)
+      top: 25px
+
+
+  #map
+    background-color: #ccc
+    height: 100%
+    width: 100%
+
+
+
+  #footer
+    width: 40%
+    @media screen and (max-width: 1100px)
+      width: 100%
 
 #restaurant-name
   color: #f18200
+  background-color: rgba(255,255,255,0.9)
   font-family: Arial,sans-serif
   font-size: 20pt
   font-weight: 200
   letter-spacing: 0
-  margin: 15px 0 30px
+  margin: 400px 0 0
+  padding: 10px 30px 10px 15px
+  border-radius: 0 30px 0 0
   text-transform: uppercase
   line-height: 1.1
+  position: relative
+  z-index: 10
+  display: inline-block
+  @media screen and (max-width: 1260px)
+    margin-top: 300px
+  @media screen and (max-width: 1100px)
+    margin-top: 220px
+  @media screen and (max-width: 475px)
+    background-color: #fff
+    border-radius: 0 0 0 0
+    margin-top: 260px
+    width: 100%
 
 #restaurant-img
-	width: 90%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
+  width: 100%
+  min-width: 600px
+  @media screen and (max-width: 1260px)
+    min-width: 465px
+  @media screen and (max-width: 760px)
+    max-width: 465px
+  @media screen and (max-width: 475px)
+    min-width: 350px
 
-#restaurant-address
+#restaurant-address, #restaurant-hours
   font-size: 12pt
-  margin: 10px 0px
+  margin: 0
+  position: relative
+  z-index: 10
+  background-color: #fff
+  width: 100%
+  padding: 15px
+  @media screen and (max-width:1100px)
+    background: linear-gradient(to right, rgba(255,255,255,1) 20%,rgba(255,255,255,0.1) 100%)
+  @media screen and (max-width: 760px)
+    max-width: 465px
+    background: #fff
 
 #restaurant-cuisine
-  background-color: #333
-  color: #ddd
+  background-color: #f18200
+  color: #252831
   font-size: 12pt
   font-weight: 300
   letter-spacing: 10px
-  margin: 0 0 20px
-  padding: 2px 0
-  text-align: center
+  margin: 0
+  padding: 2px 15px
+  text-align: left
   text-transform: uppercase
-  width: 90%
+  width: 100%
+  position: relative
+  z-index: 10
+  @media screen and (max-width: 760px)
+    max-width: 465px
+
+
+#restaurant-container
+  margin-top: 50px
+  overflow: hidden
+  border-bottom: 1px solid rgba(#f18200, 0.3)
+
 
 #restaurant-container, #reviews-container
-  border-bottom: 1px solid #d9d9d9
-  border-top: 1px solid #fff
-  padding: 140px 40px 30px
-  width: 50%
+  position: relative
+  z-index: 10
+  width: 40%
+  @media screen and (max-width: 1100px)
+    margin: 30px auto
+    width: calc(100% - 30px)
+    max-width: 710px
+    border-radius: 30px 2px 30px 2px
+  @media screen and (max-width: 760px)
+    max-width: 465px
+    margin-top: 25px
+  @media screen and (max-width: 425px)
+    margin-top: 40px
+
 
 #reviews-container
-  padding: 30px 40px 80px
-
-#reviews-container h2
-  color: #f58500
-  font-size: 24pt
-  font-weight: 300
-  letter-spacing: -1px
-  padding-bottom: 1pt
+  margin-top: 30px
+  padding-bottom: 30px
+  @media screen and (max-width: 1100px)
+    margin-bottom: 0
+  h2
+    color: #f18200
+    background-color: #fff
+    font-family: Arial,sans-serif
+    font-size: 20pt
+    font-weight: 200
+    letter-spacing: 0
+    margin: 0
+    padding: 10px 30px 10px 15px
+    border-radius: 0 30px 0 0
+    text-transform: uppercase
+    line-height: 1.1
+    position: relative
+    z-index: 10
+    display: inline-block
 
 #reviews-list
   margin: 0
   padding: 0
-
-#reviews-list li
-  background-color: #fff
-    border: 2px solid #f3f3f3
-  display: block
-  list-style-type: none
-  margin: 0 0 30px
-  overflow: hidden
-  padding: 0 20px 20px
   position: relative
-  width: 85%
 
-#reviews-list li p
-  margin: 0 0 10px
+  li
+    background-color: #fff
+    list-style-type: none
+    margin: 0 0 15px
+    overflow: hidden
+    padding: 40px 0 15px 0
+    position: relative
+    width: 100%
+    border-radius: 0
+    border-bottom: 1px solid rgba(#f18200, 0.3)
 
-#restaurant-hours td
-  color: #666
+    @media screen and (max-width: 1100px)
+      border-radius: 2px 2px 30px 2px
+      &:first-of-type
+        border-radius: 0 2px 30px 2px
+    p
+      margin: 0
+      line-height: 1.8em
+      &:nth-of-type(2),&:nth-of-type(1)
+        display: inline-block
+        padding: 0 0 0 15px
+      &:nth-of-type(4)
+        padding: 10px 15px
+      &:nth-of-type(3)
+        background-color: #f18200
+        color: #252831
+        font-size: 12pt
+        font-weight: 300
+        letter-spacing: 10px
+        margin: 0
+        padding: 2px 15px
+        text-align: left
+        text-transform: uppercase
+        position: absolute
+        top: 0
+        width: 100%
+
+
+
+
+#restaurant-hours
+  padding-top: 0
+  td
+    color: #666
+  @media screen and (max-width:1100px)
+    tr
+      td
+        &:first-of-type
+          width: 100px
