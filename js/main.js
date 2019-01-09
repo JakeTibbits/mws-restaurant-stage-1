@@ -1,8 +1,8 @@
 let restaurants,
-  neighborhoods,
-  cuisines
-var newMap
-var markers = []
+    neighborhoods,
+    cuisines;
+var newMap;
+var markers = [];
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -194,7 +194,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
-    marker.on("click", onClick);
+    marker.on("click keypress", onClick);
     function onClick() {
       window.location.href = marker.options.url;
     }
