@@ -41,7 +41,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-weight: 100;
   letter-spacing: 10px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1000; }
   @media screen and (max-width: 760px) {
     .site-title {
       font-size: 18px;
@@ -116,20 +118,32 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 
 #tab-nav-container {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 2000; }
+  top: 70px;
+  right: 15px;
+  z-index: 999; }
+  @media screen and (max-width: 760px) {
+    #tab-nav-container {
+      top: 50px; } }
   #tab-nav-container ul {
-    opacity: 0;
     padding: 0;
     margin: 0;
     list-style-type: none;
     font-size: 12px;
-    -webkit-transition: opacity 300ms ease-in-out;
-    -o-transition: opacity 300ms ease-in-out;
-    transition: opacity 300ms ease-in-out; }
+    -webkit-transition: -webkit-transform 400ms ease-in-out;
+    transition: -webkit-transform 400ms ease-in-out;
+    -o-transition: transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out;
+    transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+    background-color: #252831;
+    border-radius: 0 0 2px 2px;
+    -webkit-transform: translateY(-150px);
+    -ms-transform: translateY(-150px);
+    transform: translateY(-150px);
+    padding: 10px; }
     #tab-nav-container ul.expanded {
-      opacity: 1; }
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0); }
 
 /* ====================== Map ====================== */
 #map {
