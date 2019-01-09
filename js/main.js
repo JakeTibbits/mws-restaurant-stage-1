@@ -180,9 +180,11 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details <span>&raquo</span>';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  const ariaLabel = 'View detailed information about '+restaurant.name+' in '+restaurant.neighborhood;
+  more.setAttribute("aria-label", ariaLabel);
+  li.append(more);
 
-  return li
+  return li;
 }
 
 /**
@@ -217,7 +219,6 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 addTabMenu = () => {
   const tabNav = document.getElementById('tab-nav'),
         firstNav = tabNav.querySelectorAll("li > a")[0];
-
 
   firstNav.onfocus = () => {
     tabNav.classList = "expanded";
