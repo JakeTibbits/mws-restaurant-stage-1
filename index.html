@@ -14,7 +14,14 @@
 
 <body>
   <header id="site-header">
-      <h1 class="site-title">Restaurant Reviews</h1>
+    <h1 class="site-title">Restaurant Reviews</h1>
+    <nav id="tab-nav-container" aria-label="Tab navigation menu">
+      <ul id="tab-nav">
+        <li><a class="tab-link" href="#filters" aria-label="Filter restaurants by Neighborhood and Cuisine">Filter Restaurants</a></li>
+        <li><a class="tab-link" href="#results" aria-label="Browse found restaurants in a list">Restaurants List</a></li>
+        <li><a class="tab-link" href="#map"  aria-label="Browse found restaurants on a map">Restaurants Map</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main id="maincontent">
@@ -22,7 +29,7 @@
       <h2 class="sr-only">Map of Matching Restaurants</h2>
       <div id="map"></div>
     </section>
-    <section class="filters">
+    <section id="filters" class="filters">
       <h2 class="sr-only">Filter Restaurants by Neighborhood and Cuisine</h2>
       <div class="filter-options" role="group" aria-labelledby="filter-legend">
         <span id="filter-legend">Filter Results:</span>

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
+  addTabMenu();
 });
 
 /**
@@ -209,3 +210,17 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+
+
+// Open tab menu on keypress
+addTabMenu = () => {
+  const tabNav = document.getElementById('tab-nav'),
+        firstNav = tabNav.querySelectorAll("li > a")[0];
+
+
+  firstNav.onfocus = () => {
+    tabNav.classList = "expanded";
+  }
+
+}

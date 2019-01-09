@@ -114,6 +114,23 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     color: black;
     content: "/\00a0"; }
 
+#tab-nav-container {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2000; }
+  #tab-nav-container ul {
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 12px;
+    -webkit-transition: opacity 300ms ease-in-out;
+    -o-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out; }
+    #tab-nav-container ul.expanded {
+      opacity: 1; }
+
 /* ====================== Map ====================== */
 #map {
   height: 400px;
@@ -247,7 +264,10 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000; }
+  z-index: 800;
+  pointer-events: none; }
+  .inside header a {
+    pointer-events: all; }
 
 @media screen and (min-width: 761px) {
   .inside #maincontent {
