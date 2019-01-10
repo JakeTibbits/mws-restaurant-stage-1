@@ -6,6 +6,7 @@ var newMap;
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap();
+  addTabMenu();
 });
 
 /**
@@ -200,4 +201,28 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+
+
+// Open tab menu on keypress
+addTabMenu = () => {
+  const tabNav = document.getElementById('tab-nav'),
+        firstNav = tabNav.querySelectorAll("li > a")[0];
+
+  firstNav.onfocus = () => {
+    tabNav.classList = "expanded";
+  }
+
+}
+
+
+//register caching service worker
+
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function(reg) { console.log("Service worker registered."); })
+           .catch(function(err){ console.log("Service worker not registered."); });
 }
